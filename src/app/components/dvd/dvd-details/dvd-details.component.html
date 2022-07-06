@@ -1,0 +1,16 @@
+<div style="display: flex; justify-content: center">
+  <ul *ngIf="dvd$ | async as dvd; else loading">
+    <li>Title: {{ dvd.title }}</li>
+    <li>Year: {{ dvd.year }}</li>
+    <li>Genre: {{ dvd.genre }}</li>
+  </ul>
+</div>
+
+<button mat-fab color="primary" class="add-button" (click)="goBack()">
+  <mat-icon>keyboard_backspace</mat-icon>
+</button>
+
+<ng-template #loading>
+  <p>Fetching details for DVD: {{ title }}</p>
+  <mat-spinner class="loading"></mat-spinner>
+</ng-template>

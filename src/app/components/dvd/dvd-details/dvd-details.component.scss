@@ -1,0 +1,16 @@
+.loading {
+  position: absolute;
+  left: 46%;
+  top: 46%;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+.add-button {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+}

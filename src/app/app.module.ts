@@ -42,7 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookComponent } from './components/book/book.component';
 import { DvdComponent } from './components/dvd/dvd.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { DvdDetailsComponent } from './components/dvd/dvd-details/dvd-details.component';
 
 const materialModules = [
   MatAutocompleteModule,
@@ -83,23 +84,19 @@ const materialModules = [
   MatTreeModule,
 ]
 
-const appRoutes: Routes = [
-  { path: 'dvds', component: DvdComponent },
-  { path: 'books', component: BookComponent },
-]
-
 @NgModule({
   declarations: [
     AppComponent,
     BookComponent,
     DvdComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DvdDetailsComponent
   ],
   imports: [
     ...materialModules,
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
