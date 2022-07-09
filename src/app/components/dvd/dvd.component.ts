@@ -26,4 +26,8 @@ export class DvdComponent implements OnInit {
     this.router.navigate([`dvds/${i}`, { title: dvd.title }])
   }
 
+  public remove(i: number): void {
+    this.dvdService.remove(i)
+  }
+
 }

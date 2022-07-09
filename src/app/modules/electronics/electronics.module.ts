@@ -1,5 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { ElectronicDetailComponent } from './../../components/electronic-list/electronic-detail/electronic-detail.component';
+import { ElectronicListComponent } from './../../components/electronic-list/electronic-list.component';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ElectronicsRoutingModule } from './electronics-routing.module';
 
 import { MatRippleModule, MatNativeDateModule } from "@angular/material/core";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
@@ -36,19 +39,6 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatTreeModule } from "@angular/material/tree";
-
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BookComponent } from './components/book/book.component';
-import { DvdComponent } from './components/dvd/dvd.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { AppRoutingModule } from './app-routing.module';
-import { DvdDetailsComponent } from './components/dvd/dvd-details/dvd-details.component';
-import { DvdFormComponent } from './components/dvd/dvd-form/dvd-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { BookDetailsComponent } from './components/book/book-details/book-details.component';
-import { BookAuthorsComponent } from './components/book/book-authors/book-authors.component';
-import { ElectronicsModule } from './modules/electronics/electronics.module';
 
 const materialModules = [
   MatAutocompleteModule,
@@ -91,24 +81,13 @@ const materialModules = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BookComponent,
-    DvdComponent,
-    PageNotFoundComponent,
-    DvdDetailsComponent,
-    DvdFormComponent,
-    BookDetailsComponent,
-    BookAuthorsComponent
+    ElectronicListComponent,
+    ElectronicDetailComponent
   ],
   imports: [
-    ...materialModules,
-    BrowserModule,
-    BrowserAnimationsModule,
-    // ElectronicsModule,
-    AppRoutingModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    CommonModule,
+    ElectronicsRoutingModule,
+    ...materialModules
+  ]
 })
-export class AppModule { }
+export class ElectronicsModule { }

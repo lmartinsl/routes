@@ -1,0 +1,12 @@
+<mat-divider vertical="true"></mat-divider>
+
+<div class="container">
+  <div *ngIf="authors$ | async as authors">
+    <mat-list>
+      <mat-list-item *ngFor="let a of authors">
+        <mat-icon matListIcon>person</mat-icon>
+        <h3 matLine>{{ a }}</h3>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

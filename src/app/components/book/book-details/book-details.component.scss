@@ -1,0 +1,20 @@
+.container {
+  flex-direction: row;
+  align-content: stretch;
+
+  .background {
+    padding: 20px;
+    background-color: rgba(128, 128, 128, 0.116);
+
+    .books {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-details {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

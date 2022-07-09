@@ -13,7 +13,7 @@ export class BookService {
 
   constructor() {
 
-    timer(1500)
+    timer(600)
       .subscribe(() => {
         this.bookSubject$.next([
           { title: 'Book 1', pages: 200, authors: ['Lucas', 'Larissa'] },
@@ -39,7 +39,7 @@ export class BookService {
     return this.books$
       .pipe(
         map(books => (i >= 0 && i < books.length) ? books[i] : null),
-        delay(1000)
+        delay(600)
       )
   }
 

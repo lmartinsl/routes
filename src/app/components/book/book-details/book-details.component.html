@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="background" *ngIf="book$ | async as book">
+    <div class="books">
+      <div>
+        <p>Book title: {{ book.title }}</p>
+        <p>Pages: {{ book.pages }}</p>
+      </div>
+      <div class="books-details">
+        <button
+          mat-raised-button
+          color="primary"
+          style="margin-bottom: 7px"
+          (click)="goAuthors()"
+        >
+          <mat-icon>people_outline</mat-icon>
+          Authors
+        </button>
+
+        <button mat-raised-button color="accent" (click)="remove()">
+          <mat-icon>delete_outline</mat-icon>
+          Remove
+        </button>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
